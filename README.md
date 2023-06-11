@@ -31,7 +31,7 @@ Chegou a hora de colocar a mão na massa!
 
 - Siga [esse protótipo](https://www.figma.com/file/rET9F2CeUEJdiVN7JRu993/E-commerce---capputeeno?node-id=680%3A6449)
 - Utilize Next.js e Typescript
-- Faça a estilização com styled-components
+- Faça a estilização com tailwind css
 - Utilize o local storage para gerenciar o carrinho
 - Por favor, inclua no README as instruções de instalação do projeto
 - Sinta-se livre para incluir quaisquer observações

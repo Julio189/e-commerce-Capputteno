@@ -1,7 +1,7 @@
-import Image from 'next/image'
+
 
 export default function Home() {
   return (
-    <div>Ola Mundo</div>
+    <div><h1>ola mundo</h1></div>
   )
 }

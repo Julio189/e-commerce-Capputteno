@@ -14,7 +14,8 @@ module.exports = {
       },
       colors: {
         'logoColor':"#5D5D6D",
-        'darkColor': '#737380'
+        'darkColor': '#737380',
+        'deleteColor': '#DE3838'
       },
     },
   },

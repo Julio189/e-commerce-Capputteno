@@ -17,7 +17,7 @@ const ProductCard = ({ image, title, price }: ProductCardProps) => {
       <img
         src={image}
         alt="Imagem do Produto"
-        className="w-[256px] h-[300px]"
+        className="w-[256px] h-[300px] rounded"
       />
       <div className="flex flex-col w-[256px] items-start justify-center py-2 px-3">
       <h3 className="leading-[24px] text-textDark2 text-base font-light">

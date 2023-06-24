@@ -9,7 +9,7 @@ const sairaStencil = Saira_Stencil_One({
 function Logo() {
   return (
     <Link href='/'
-    className={`${sairaStencil.className} text-logoColor text-[40px] leading-[60px]`}>
+    className={`${sairaStencil.className} text-logoColor text-xl md:text-[40px] mr-3 md:mr-2 leading-[60px]`}>
       Capputeeno
     </Link>
   )

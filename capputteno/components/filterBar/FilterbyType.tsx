@@ -12,7 +12,7 @@ const FilterbyType = () => {
   };
 
   return (
-    <ul className="flex items-center justify-center gap-10">
+    <ul className="flex items-center justify-center gap-10 mr-3">
       <FilterItem
         titulo="todos os produtos"
         select={type === FilterType.ALL}

@@ -9,7 +9,7 @@ export default function Home() {
 
   return (
     <QueryClientProvider client={client}>
-      <main className="px-40 pt-[34px] flex flex-col items-center bg-bgPrimary">
+      <main className="px-8 md:px-40 pt-[34px] flex flex-col items-center bg-bgPrimary">
         <FilterBar/>
         <ProductList/>
       </main>

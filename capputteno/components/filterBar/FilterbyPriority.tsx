@@ -20,10 +20,10 @@ const FilterbyPriority = () => {
   };
 
   return (
-    <div className="flex items-center relative">
+    <div className="z-10 flex items-center relative">
       <button
         onClick={handleIsOpen}
-        className="text-darkColor leading-[22px] text-sm flex items-center justify-center gap-2"
+        className="text-darkColor leading-[22px] text-[12px] md:text-sm flex items-center justify-center gap-2"
       >
         Organizar por
         <ArrowIcon />

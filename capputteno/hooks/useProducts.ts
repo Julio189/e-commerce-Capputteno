@@ -36,8 +36,6 @@ const mountQuery = (type: FilterType, priority:PriorityTypes) => {
           category
         }
       }
-      
-    
     `
 }
 

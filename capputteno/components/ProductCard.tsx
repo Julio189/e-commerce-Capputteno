@@ -1,19 +1,26 @@
 import { formatPrice } from "@/utils/FormatPrice";
+import { useRouter } from "next/navigation";
 
 interface ProductCardProps {
   image: string;
   title: string;
   price: number;
+  id: string
 }
 
-const ProductCard = ({ image, title, price }: ProductCardProps) => {
+const ProductCard = ({ image, title, price, id }: ProductCardProps) => {
 
+   const router = useRouter()
+
+   const handleNavigate = () => {
+    router.push(`/product?id=${id}`)
+   }
    
-
     const priceFormated = formatPrice(price)
 
   return (
-    <div className="flex flex-col w-[256px] items-center justify-center backdrop-blur-[10px] bg-[#ffffff66] rounded">
+    <button onClick={handleNavigate}
+    className="flex flex-col w-[256px] items-center justify-center backdrop-blur-[10px] bg-[#ffffff66] rounded">
       <img
         src={image}
         alt="Imagem do Produto"
@@ -29,7 +36,7 @@ const ProductCard = ({ image, title, price }: ProductCardProps) => {
         </p>
       </div>
         
-    </div>
+    </button>
   );
 };
 

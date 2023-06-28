@@ -1,7 +1,6 @@
 'use client';
 
 import BackButton from "@/components/BackButton";
-import CartIcon from "@/components/icons/CartIcon";
 import ShopBag from "@/components/icons/ShopBag";
 import { useProduct } from "@/hooks/useProduct";
 import { formatPrice } from "@/utils/FormatPrice";
@@ -9,7 +8,31 @@ import { formatPrice } from "@/utils/FormatPrice";
 
 const Product = ({ searchParams }:{searchParams:{ id:string }}) => {
   const { data } = useProduct(searchParams.id)
-  console.log(data)
+  const handleAddToCart = () => {
+    let cartItems = localStorage.getItem('cart-items');
+    if(cartItems) {
+      let cartItemsArray = JSON.parse(cartItems);
+
+      let existingProductIndex = cartItemsArray.findIndex((item:{id:string}) => item.id === searchParams.id);
+    
+      if(existingProductIndex != -1) {
+        cartItemsArray[existingProductIndex].quantity += 1;
+      } else {
+        cartItemsArray.push({...data, quantity: 1, id: searchParams.id})
+      }
+
+      localStorage.setItem('cart-items',JSON.stringify(cartItemsArray))
+
+    } else{
+      const newCart =  [{
+        ...data,
+        id: searchParams.id,
+        quantity: 1
+      }]
+      localStorage.setItem('cart-items', JSON.stringify(newCart));
+    }
+      
+  }
   return (
     <section className="bg-bgPrimary px-40 pb-[50px] pt-[25px] flex flex-col">
      <BackButton navigation="/"/>
@@ -25,7 +48,8 @@ const Product = ({ searchParams }:{searchParams:{ id:string }}) => {
             <h3 className="text-base text-darkColor mb-2">Descrição</h3>
             <span className="text-sm text-textDark2">{data?.description}</span>
           </div>
-          <button className="bg-[#115D8C] text-white h-[44px] uppercase flex items-center justify-center gap-3 absolute bottom-0 w-full rounded">
+          <button onClick={handleAddToCart} 
+          className="bg-[#115D8C] text-white h-[44px] uppercase flex items-center justify-center gap-3 absolute bottom-0 w-full rounded">
             <ShopBag/>
             <h2>Adiconar ao carrinho</h2>
           </button>
